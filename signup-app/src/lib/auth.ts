@@ -3,18 +3,12 @@ import GoogleProvider from "next-auth/providers/google"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { prisma } from "./prisma"
 
-// Validate required environment variables
-if (!process.env.NEXTAUTH_SECRET) {
-  throw new Error("NEXTAUTH_SECRET is not set. Please set it in your .env file.")
-}
-
-if (!process.env.NEXTAUTH_URL && process.env.NODE_ENV === "production") {
-  throw new Error("NEXTAUTH_URL is required in production. Please set it in your environment variables.")
-}
+// Get environment variables with fallbacks for build time
+const nextAuthSecret = process.env.NEXTAUTH_SECRET || process.env.AUTH_SECRET
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: nextAuthSecret,
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
