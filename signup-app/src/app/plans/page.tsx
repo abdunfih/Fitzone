@@ -166,7 +166,7 @@ export default function PlansPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What's Included in All Memberships
+              What&apos;s Included in All Memberships
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Every membership includes access to our premium facilities and amenities.
@@ -234,7 +234,7 @@ export default function PlansPage() {
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Are there any initiation fees?</h3>
-              <p className="text-gray-600">No, we don't charge any initiation or setup fees. You only pay your monthly membership fee.</p>
+              <p className="text-gray-600">No, we don&apos;t charge any initiation or setup fees. You only pay your monthly membership fee.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">

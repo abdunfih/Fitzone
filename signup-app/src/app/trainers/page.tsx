@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Trainer {
   id: number
@@ -161,10 +162,13 @@ export default function TrainersPage() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative h-80 overflow-hidden">
-                  <img 
-                    src={trainer.image} 
+                  <Image
+                    src={trainer.image}
                     alt={`${trainer.name} - ${trainer.specialty} trainer`}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    width={500}
+                    height={500}
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute top-4 right-4">

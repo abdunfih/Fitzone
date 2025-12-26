@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Dumbbell, Users, Calendar, TrendingUp, Award, Zap, Heart, Target } from 'lucide-react'
 
 export default function HomePage() {
@@ -24,7 +25,7 @@ export default function HomePage() {
             <div className="animate-fade-in">
               <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-500/20 to-red-600/20 backdrop-blur-sm border border-orange-500/30 rounded-full px-5 py-2.5 mb-8">
                 <Award className="w-5 h-5 text-orange-400" />
-                <span className="text-sm font-semibold text-orange-300">India's #1 Fitness Destination</span>
+                <span className="text-sm font-semibold text-orange-300">India&apos;s #1 Fitness Destination</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
@@ -95,10 +96,13 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-4">
                 {/* Large Image */}
                 <div className="col-span-2 relative group overflow-hidden rounded-3xl shadow-2xl">
-                  <img 
+                  <Image
                     src="https://images.unsplash.com/photo-1758875569399-99a7d80ace43?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwyfHxwZXJzb25hbCUyMHRyYWluaW5nJTIwdHJhaW5lciUyMGNsaWVudCUyMG1vdGl2YXRpb258ZW58MHwwfHx8MTc2MTMyMjg3N3ww&ixlib=rb-4.1.0&q=85"
                     alt="Personal training session - Vitaly Gariev on Unsplash"
                     className="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    width={800}
+                    height={800}
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-6 left-6 right-6">
@@ -116,10 +120,13 @@ export default function HomePage() {
 
                 {/* Small Images */}
                 <div className="relative group overflow-hidden rounded-3xl shadow-xl">
-                  <img 
+                  <Image
                     src="https://images.unsplash.com/photo-1662549905044-e3f71c293989?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw0fHxncm91cCUyMGZpdG5lc3MlMjBleGVyY2lzZSUyMGNsYXNzJTIwcGVvcGxlJTIwZW5lcmdldGljfGVufDB8MHx8fDE3NjEzMjI4Nzd8MA&ixlib=rb-4.1.0&q=85"
                     alt="Group fitness class - Rendy Novantino on Unsplash"
                     className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    width={500}
+                    height={500}
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
@@ -129,10 +136,13 @@ export default function HomePage() {
                 </div>
 
                 <div className="relative group overflow-hidden rounded-3xl shadow-xl">
-                  <img 
+                  <Image
                     src="https://images.unsplash.com/photo-1576491742123-735882d4ca7e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxneW0lMjBlcXVpcG1lbnQlMjB3ZWlnaHRzJTIwZml0bmVzcyUyMG1hY2hpbmVzJTIwbW9kZXJufGVufDB8MHx8fDE3NjEzMjI4Nzd8MA&ixlib=rb-4.1.0&q=85"
                     alt="Modern gym equipment - CHUTTERSNAP on Unsplash"
                     className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    width={500}
+                    height={500}
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
@@ -245,15 +255,21 @@ export default function HomePage() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img 
+              <Image
                 src="https://images.unsplash.com/photo-1576491742123-735882d4ca7e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxneW0lMjBlcXVpcG1lbnQlMjB3ZWlnaHRzJTIwZml0bmVzcyUyMG1hY2hpbmVzJTIwbW9kZXJufGVufDB8MHx8fDE3NjEzMjI4Nzd8MA&ixlib=rb-4.1.0&q=85"
                 alt="Modern gym equipment - CHUTTERSNAP on Unsplash"
                 className="rounded-2xl w-full h-64 object-cover shadow-2xl"
+                width={600}
+                height={600}
+                unoptimized
               />
-              <img 
+              <Image
                 src="https://images.unsplash.com/photo-1662549905044-e3f71c293989?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw0fHxncm91cCUyMGZpdG5lc3MlMjBleGVyY2lzZSUyMGNsYXNzJTIwcGVvcGxlJTIwZW5lcmdldGljfGVufDB8MHx8fDE3NjEzMjI4Nzd8MA&ixlib=rb-4.1.0&q=85"
                 alt="Group fitness class - Rendy Novantino on Unsplash"
                 className="rounded-2xl w-full h-64 object-cover shadow-2xl mt-8"
+                width={600}
+                height={600}
+                unoptimized
               />
             </div>
           </div>
@@ -304,12 +320,15 @@ export default function HomePage() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 leading-relaxed italic">"{testimonial.text}"</p>
+                <p className="text-gray-700 mb-6 leading-relaxed italic">&quot;{testimonial.text}&quot;</p>
                 <div className="flex items-center">
-                  <img 
-                    src={testimonial.image} 
+                  <Image
+                    src={testimonial.image}
                     alt={testimonial.name}
                     className="w-12 h-12 rounded-full mr-4 border-2 border-orange-200"
+                    width={48}
+                    height={48}
+                    unoptimized
                   />
                   <div>
                     <p className="font-semibold text-gray-900">{testimonial.name}</p>

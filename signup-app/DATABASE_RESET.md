@@ -81,7 +81,7 @@ After running the seed script, you can verify the database has been seeded corre
 
 The database connection is configured in `.env.local`:
 ```
-DATABASE_URL="postgresql://nafi:Nafi2005@172.31.224.1:5432/nafi-ai-wo-3?schema=public"
+DATABASE_URL=""
 ```
 
 ## Schema
