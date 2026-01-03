@@ -23,11 +23,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="animate-fade-in">
-              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-500/20 to-red-600/20 backdrop-blur-sm border border-orange-500/30 rounded-full px-5 py-2.5 mb-8">
-                <Award className="w-5 h-5 text-orange-400" />
-                <span className="text-sm font-semibold text-orange-300">India&apos;s #1 Fitness Destination</span>
-              </div>
-              
+
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                 Build Your
                 <br />
@@ -36,7 +32,7 @@ export default function HomePage() {
                     Dream Body
                   </span>
                   <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 300 12" fill="none">
-                    <path d="M2 10C50 5 100 2 150 5C200 8 250 10 298 8" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
+                    <path d="M2 10C50 5 100 2 150 5C200 8 250 10 298 8" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round" />
                     <defs>
                       <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="#fb923c" />
@@ -47,15 +43,15 @@ export default function HomePage() {
                   </svg>
                 </span>
               </h1>
-              
+
               <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-xl">
                 Experience world-class training with cutting-edge equipment, expert coaches, and a community that inspires greatness every single day.
               </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Link 
-                  href="/signup" 
+                <Link
+                  href="/signup"
                   className="group relative bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-2xl font-bold text-lg overflow-hidden transition-all duration-300 shadow-2xl hover:shadow-orange-500/50 transform hover:-translate-y-1 flex items-center justify-center"
                 >
                   <span className="relative z-10 flex items-center">
@@ -64,8 +60,8 @@ export default function HomePage() {
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
-                <Link 
-                  href="/plans" 
+                <Link
+                  href="/plans"
                   className="group bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 hover:border-white/30 transition-all duration-300 flex items-center justify-center"
                 >
                   View Plans
@@ -152,15 +148,8 @@ export default function HomePage() {
                 </div>
               </div>
 
-          
-            </div>
-          </div>
-        </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-white/50 rounded-full"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -176,7 +165,7 @@ export default function HomePage() {
               Experience the perfect blend of cutting-edge facilities, expert guidance, and a supportive community.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
@@ -216,8 +205,8 @@ export default function HomePage() {
                 description: 'Train on your schedule with round-the-clock gym access and flexible membership options that fit your lifestyle.'
               },
             ].map((feature, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-hover border border-gray-100"
               >
                 <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6 text-white transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
@@ -287,7 +276,7 @@ export default function HomePage() {
               Join thousands of members who have transformed their lives with us.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -345,7 +334,7 @@ export default function HomePage() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6bTAgMTBjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6TTI2IDM0YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00em0wIDEwYzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="heading-lg text-white mb-6">
             Ready to Start Your Fitness Journey?
@@ -353,8 +342,8 @@ export default function HomePage() {
           <p className="body-lg text-white/90 mb-10 max-w-2xl mx-auto">
             Join thousands of members who have transformed their lives with our professional gym facilities and expert trainers.
           </p>
-          <Link 
-            href="/signup" 
+          <Link
+            href="/signup"
             className="inline-flex items-center bg-white text-orange-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-white/50 transform hover:-translate-y-1"
           >
             Join Now

@@ -4,19 +4,45 @@ import { prisma } from '@/lib/prisma'
 
 export async function POST(request: NextRequest) {
   try {
-    const { fullName, email, password } = await request.json()
+    const { fullName, email, password, confirmPassword } = await request.json()
 
-    // Validate input
+    // Validate required fields
     if (!fullName || !email || !password) {
       return NextResponse.json(
-        { message: 'All fields are required' },
+        { message: 'Full name, email, and password are required' },
         { status: 400 }
       )
     }
 
-    // Check if user already exists
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { message: 'Please enter a valid email address' },
+        { status: 400 }
+      )
+    }
+
+    // Validate password length
+    if (password.length < 8) {
+      return NextResponse.json(
+        { message: 'Password must be at least 8 characters long' },
+        { status: 400 }
+      )
+    }
+
+    // Validate password confirmation
+    if (confirmPassword && password !== confirmPassword) {
+      return NextResponse.json(
+        { message: 'Passwords do not match' },
+        { status: 400 }
+      )
+    }
+
+    // Check if user already exists with optimized query
     const existingUser = await prisma.user.findUnique({
-      where: { email }
+      where: { email },
+      select: { id: true } // Only select what we need for faster query
     })
 
     if (existingUser) {
@@ -26,31 +52,33 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Hash password
-    const hashedPassword = await bcrypt.hash(password, 12)
+    // Hash password with optimized salt rounds
+    const hashedPassword = await bcrypt.hash(password, 10)
 
-    // Create user
+    // Create user with optimized transaction
     const user = await prisma.user.create({
       data: {
-        name: fullName,
-        email,
+        name: fullName.trim(),
+        email: email.toLowerCase().trim(),
         password: hashedPassword,
-        provider: 'credentials',
-        createdAt: new Date()
+        provider: 'credentials'
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        createdAt: true
       }
     })
 
-    // Remove password from response
-    const { password: _, ...userWithoutPassword } = user
-
     return NextResponse.json(
-      { message: 'User created successfully', user: userWithoutPassword },
+      { message: 'User created successfully', user },
       { status: 201 }
     )
   } catch (error) {
     console.error('Signup error:', error)
     return NextResponse.json(
-      { message: 'Internal server error' },
+      { message: 'Internal server error. Please try again.' },
       { status: 500 }
     )
   }
